@@ -1,9 +1,24 @@
-module bin2bcd_tb;
+module q2_tb;
 
-  // Testbench signals
-  logic [3:0] binary;
-  logic [3:0] bcd;
-  logic carry;
+    logic [3:0] in, out;
+    logic cout;
 
-  // complete your tb
+    hex_to_bcd DUT(
+        .hex_in(in),
+        .BCD(out),
+        .carry(cout)
+    );
+
+    initial begin
+
+        for(int i =0; i<16;i++) begin
+
+            in = i;
+            #10ns;
+
+        end
+
+    end
+
 endmodule
+
